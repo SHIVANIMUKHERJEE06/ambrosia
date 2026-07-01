@@ -1,7 +1,7 @@
 # Ambrosia 🌿
 **Open-source skincare ingredient checker with AI analysis and product comparison.**
 
-> ⚠️ **Before presenting:** Replace `ShivaniM@06` everywhere with your actual GitHub username.
+
 
 ## Features
 | Feature | Details |
