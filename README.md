@@ -36,11 +36,7 @@ npm run dev:frontend  # Terminal 2 → http://localhost:5173
 ## Product database (replaces Nykaa/Tira)
 Ambrosia uses **Open Beauty Facts** (`world.openbeautyfacts.org`) — a free, open-source database with 2M+ beauty products including Indian brands (Lakme, Biotique, Lotus, Sugar, Plum, Minimalist, etc.), updated daily by the community. No private API key required. Falls back to curated sample data when offline.
 
-## Demo day checklist
-- [ ] Replace `ShivaniM@06` in README, About.jsx, CONTRIBUTING.md
-- [ ] Visit Render URL 2 min before presenting to wake it up (free tier spins down)
-- [ ] Test with a real 30-ingredient label before presenting
-- [ ] Bookmark `/api/health` to verify backend is alive
+
 
 ## Known limitations (state proactively)
 - 23 curated safety flags (reported live, never hardcoded)
