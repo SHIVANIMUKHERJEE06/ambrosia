@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: ambrosia-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node src/server.js
+    # NOTE ON DATABASE PERSISTENCE:
+    # Render free tier has an ephemeral filesystem — db.json is wiped on every
+    # redeploy. This is acceptable for a hackathon demo. For production, either:
+    # (a) upgrade to Render's paid tier and add a persistent disk, or
+    # (b) migrate to PostgreSQL (Render offers a free PostgreSQL instance).
+    # DB_PATH below uses /tmp which survives restarts but not redeploys.
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_PATH
+        value: /tmp/ambrosia-db.json
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GOOGLE_CLOUD_VISION_API_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
