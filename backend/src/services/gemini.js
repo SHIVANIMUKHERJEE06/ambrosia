@@ -15,7 +15,7 @@
 //  4. We never send user profile data (skin type, history) to Gemini —
 //     only the raw ingredient names.
 
-const GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+const GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent";
 
 const SYSTEM_PROMPT = `You are a cosmetic ingredient safety analyst. You will be given a list of ingredient names that were NOT found in the EU CosIng or FDA ingredient databases.
 
@@ -136,6 +136,6 @@ export async function analyzeWithGemini(ingredientNames, skinType = null) {
     analyzedCount: toAnalyze.length,
     totalUnrecognized: ingredientNames.length,
     disclaimer: "AI-assisted analysis of ingredients not found in our regulatory database. Powered by Google Gemini. This is supplementary context only — not a regulatory safety determination. Treat 'likely-safe' signals with appropriate skepticism and always cross-reference with official sources for important decisions.",
-    model: "gemini-2.0-flash",
+    model: "gemini-3.6-flash",
   };
 }
