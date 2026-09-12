@@ -1,0 +1,286 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "lastReviewed": "2026-06-21",
+    "sources": [
+      "EU Cosmetics Regulation (EC) No 1223/2009, Annexes II/III/V (prohibited, restricted, allowed preservatives)",
+      "US FDA Cosmetic Ingredient guidance and Prohibited & Restricted Ingredients list",
+      "EU CosIng substance identifiers (INCI/CAS/EC numbers)",
+      "Published dermatology literature on common contact allergens and irritants (general consensus findings, not individualized medical advice)"
+    ],
+    "disclaimer": "This is a curated safety-flag layer covering commonly-discussed cosmetic ingredients of concern. It is NOT a complete transcription of EU/FDA regulatory text, and Ambrosia says so honestly in the UI. Coverage size is reported live from this file's length, never hardcoded into copy."
+  },
+  "flaggedIngredients": [
+    {
+      "id": "formaldehyde",
+      "canonicalName": "Formaldehyde",
+      "synonyms": ["formalin", "methanal", "formaldehyde solution"],
+      "category": "formaldehyde-releaser-or-source",
+      "severity": "high",
+      "reason": "Formaldehyde is a known human carcinogen by inhalation and a common skin sensitizer/contact allergen. It is restricted in EU cosmetics and banned in some product categories.",
+      "regions": { "eu": "restricted", "us_fda": "restricted" }
+    },
+    {
+      "id": "dmdm-hydantoin",
+      "canonicalName": "DMDM Hydantoin",
+      "synonyms": ["dmdm hydantoin", "1,3-bis(hydroxymethyl)-5,5-dimethylimidazolidine-2,4-dione"],
+      "category": "formaldehyde-releaser",
+      "severity": "high",
+      "reason": "Releases small amounts of formaldehyde over time as a preservative mechanism. Common cause of contact dermatitis; flagged because it rarely appears on a label as 'formaldehyde' itself, making it easy for naive scanners to miss.",
+      "regions": { "eu": "restricted-concentration", "us_fda": "allowed-restricted" }
+    },
+    {
+      "id": "quaternium-15",
+      "canonicalName": "Quaternium-15",
+      "synonyms": ["quaternium 15", "dowicil 200"],
+      "category": "formaldehyde-releaser",
+      "severity": "high",
+      "reason": "One of the most common formaldehyde-releasing preservatives in rinse-off and leave-on products; well documented contact allergen.",
+      "regions": { "eu": "restricted-concentration", "us_fda": "allowed-restricted" }
+    },
+    {
+      "id": "imidazolidinyl-urea",
+      "canonicalName": "Imidazolidinyl Urea",
+      "synonyms": ["imidazolidinyl urea", "germall 115"],
+      "category": "formaldehyde-releaser",
+      "severity": "medium",
+      "reason": "Formaldehyde-releasing preservative; lower release rate than DMDM Hydantoin or Quaternium-15 but still a recognized sensitizer.",
+      "regions": { "eu": "restricted-concentration", "us_fda": "allowed-restricted" }
+    },
+    {
+      "id": "diazolidinyl-urea",
+      "canonicalName": "Diazolidinyl Urea",
+      "synonyms": ["diazolidinyl urea", "germall ii"],
+      "category": "formaldehyde-releaser",
+      "severity": "medium",
+      "reason": "Formaldehyde-releasing preservative commonly used in leave-on and rinse-off products.",
+      "regions": { "eu": "restricted-concentration", "us_fda": "allowed-restricted" }
+    },
+    {
+      "id": "bronopol",
+      "canonicalName": "Bronopol",
+      "synonyms": ["2-bromo-2-nitropropane-1,3-diol", "2-bromo-2-nitropropane-1,3-diol (formaldehyde releaser)"],
+      "category": "formaldehyde-releaser",
+      "severity": "medium",
+      "reason": "Can release formaldehyde, especially when combined with amine-based ingredients in the same formula.",
+      "regions": { "eu": "restricted-concentration", "us_fda": "allowed-restricted" }
+    },
+    {
+      "id": "parabens-long-chain",
+      "canonicalName": "Butylparaben / Propylparaben",
+      "synonyms": ["butylparaben", "propylparaben", "isobutylparaben", "isopropylparaben"],
+      "category": "preservative-endocrine-concern",
+      "severity": "medium",
+      "reason": "Long-chain parabens are restricted in the EU due to endocrine-disruption concern data; short-chain parabens (methyl-, ethyl-) are considered lower-concern and are not flagged here.",
+      "regions": { "eu": "restricted-concentration", "us_fda": "allowed" }
+    },
+    {
+      "id": "phenoxyethanol",
+      "canonicalName": "Phenoxyethanol",
+      "synonyms": ["phenoxyethanol", "2-phenoxyethanol"],
+      "category": "preservative-low-concern",
+      "severity": "low",
+      "reason": "Widely used preservative, generally well tolerated at regulated concentrations; flagged at low severity mainly for awareness, not because it is considered dangerous.",
+      "regions": { "eu": "restricted-concentration", "us_fda": "allowed" }
+    },
+    {
+      "id": "fragrance-parfum",
+      "canonicalName": "Fragrance / Parfum",
+      "synonyms": ["fragrance", "parfum", "perfume", "aroma"],
+      "category": "undisclosed-mixture-allergen-risk",
+      "severity": "medium",
+      "reason": "An umbrella term that can legally hide dozens of individual fragrance compounds, several of which are known contact allergens. Cannot be chemically verified from the label alone — flagged for transparency, not because every instance is harmful.",
+      "regions": { "eu": "labeling-required-above-threshold", "us_fda": "no-disclosure-required" }
+    },
+    {
+      "id": "essential-oil-citrus",
+      "canonicalName": "Citrus Peel / Bergamot Oil (Furanocoumarin-containing)",
+      "synonyms": ["citrus bergamia fruit oil", "citrus limon peel oil", "bergamot oil"],
+      "category": "phototoxic",
+      "severity": "medium",
+      "reason": "Cold-pressed citrus oils can contain furanocoumarins, which are phototoxic and may cause skin reactions in sunlight (especially relevant for leave-on products used by people in high-UV climates).",
+      "regions": { "eu": "labeling-required", "us_fda": "no-specific-restriction" }
+    },
+    {
+      "id": "hydroquinone",
+      "canonicalName": "Hydroquinone",
+      "synonyms": ["hydroquinone", "1,4-dihydroxybenzene"],
+      "category": "skin-lightening-restricted",
+      "severity": "high",
+      "reason": "Banned in over-the-counter cosmetics in the EU; available by prescription only in some regions due to risk of ochronosis with prolonged use.",
+      "regions": { "eu": "banned-otc", "us_fda": "restricted-otc" }
+    },
+    {
+      "id": "triclosan",
+      "canonicalName": "Triclosan",
+      "synonyms": ["triclosan"],
+      "category": "antimicrobial-restricted",
+      "severity": "medium",
+      "reason": "Restricted antimicrobial agent; banned from some product categories due to endocrine and antimicrobial-resistance concerns.",
+      "regions": { "eu": "restricted-concentration", "us_fda": "banned-handwash" }
+    },
+    {
+      "id": "retinol",
+      "canonicalName": "Retinol",
+      "synonyms": ["retinol", "retinyl palmitate", "retinyl acetate"],
+      "category": "active-interaction-risk",
+      "severity": "low",
+      "reason": "Not inherently unsafe, but increases sun sensitivity and combines badly with certain other actives (see interaction warnings).",
+      "regions": { "eu": "allowed", "us_fda": "allowed" }
+    },
+    {
+      "id": "salicylic-acid-bha",
+      "canonicalName": "Salicylic Acid (BHA)",
+      "synonyms": ["salicylic acid", "bha"],
+      "category": "active-interaction-risk",
+      "severity": "low",
+      "reason": "Effective exfoliant; over-exfoliation risk increases sharply when layered with other acids or retinoids.",
+      "regions": { "eu": "restricted-concentration", "us_fda": "allowed" }
+    },
+    {
+      "id": "ascorbic-acid-vitc",
+      "canonicalName": "Ascorbic Acid (Vitamin C)",
+      "synonyms": ["ascorbic acid", "l-ascorbic acid"],
+      "category": "active-interaction-risk",
+      "severity": "low",
+      "reason": "Generally beneficial antioxidant; can be destabilized or cause irritation when combined with niacinamide or certain acids at high concentrations.",
+      "regions": { "eu": "allowed", "us_fda": "allowed" }
+    },
+    {
+      "id": "talc",
+      "canonicalName": "Talc",
+      "synonyms": ["talc", "talcum powder", "magnesium silicate"],
+      "category": "particulate-contamination-history",
+      "severity": "medium",
+      "reason": "Cosmetic-grade talc must be asbestos-free under current regulation; flagged for awareness due to historical contamination controversies and inhalation risk in loose powders.",
+      "regions": { "eu": "allowed-purity-controlled", "us_fda": "allowed-purity-controlled" }
+    },
+    {
+      "id": "coal-tar",
+      "canonicalName": "Coal Tar",
+      "synonyms": ["coal tar", "crude coal tar"],
+      "category": "carcinogen-restricted",
+      "severity": "high",
+      "reason": "Classified as a human carcinogen; banned in EU cosmetics, restricted to specific medicated uses in the US.",
+      "regions": { "eu": "banned", "us_fda": "restricted-otc-drug-use-only" }
+    },
+    {
+      "id": "lead-acetate",
+      "canonicalName": "Lead Acetate",
+      "synonyms": ["lead acetate"],
+      "category": "heavy-metal-banned",
+      "severity": "high",
+      "reason": "Heavy metal compound formerly used in some hair dyes; banned in EU cosmetics and phased out in the US.",
+      "regions": { "eu": "banned", "us_fda": "banned" }
+    },
+    {
+      "id": "bha-butylated-hydroxyanisole",
+      "canonicalName": "Butylated Hydroxyanisole (BHA antioxidant)",
+      "synonyms": ["bha", "butylated hydroxyanisole"],
+      "category": "antioxidant-concern",
+      "severity": "medium",
+      "reason": "Distinct from salicylic acid (also abbreviated BHA in skincare marketing) — this is a synthetic antioxidant preservative with possible endocrine-disruption signal in animal studies; restricted concentration in EU.",
+      "regions": { "eu": "restricted-concentration", "us_fda": "allowed" }
+    },
+    {
+      "id": "oxybenzone",
+      "canonicalName": "Oxybenzone",
+      "synonyms": ["oxybenzone", "benzophenone-3"],
+      "category": "uv-filter-concern",
+      "severity": "medium",
+      "reason": "UV filter with documented hormone-disruption signal and coral-reef toxicity; banned in some jurisdictions for reef protection.",
+      "regions": { "eu": "restricted-concentration", "us_fda": "allowed" }
+    },
+    {
+      "id": "methylisothiazolinone",
+      "canonicalName": "Methylisothiazolinone (MIT/MI)",
+      "synonyms": ["methylisothiazolinone", "mit", "mi"],
+      "category": "preservative-allergen",
+      "severity": "high",
+      "reason": "One of the most common causes of cosmetic-related allergic contact dermatitis identified in dermatology patch-test studies over the past decade; restricted in leave-on products in the EU.",
+      "regions": { "eu": "restricted-leave-on-banned", "us_fda": "allowed" }
+    },
+    {
+      "id": "sodium-lauryl-sulfate",
+      "canonicalName": "Sodium Lauryl Sulfate (SLS)",
+      "synonyms": ["sodium lauryl sulfate", "sls"],
+      "category": "irritant-surfactant",
+      "severity": "low",
+      "reason": "Effective cleanser but a known irritant for sensitive or compromised skin barriers, especially in leave-on or high-concentration rinse-off use.",
+      "regions": { "eu": "allowed", "us_fda": "allowed" }
+    },
+    {
+      "id": "denatured-alcohol",
+      "canonicalName": "Alcohol Denat.",
+      "synonyms": ["alcohol denat", "denatured alcohol", "sd alcohol"],
+      "category": "irritant-drying",
+      "severity": "low",
+      "reason": "Can be drying or irritating for dry, sensitive, or eczema-prone skin in high concentrations, though it is not inherently unsafe and helps product texture/preservation.",
+      "regions": { "eu": "allowed", "us_fda": "allowed" }
+    }
+  ],
+  "interactionWarnings": [
+    {
+      "id": "retinol-aha-bha",
+      "ingredientCategoriesInvolved": ["retinoid", "exfoliating-acid"],
+      "triggerIngredients": ["retinol", "retinyl palmitate", "retinyl acetate", "tretinoin", "adapalene"],
+      "counterpartIngredients": ["glycolic acid", "lactic acid", "salicylic acid", "mandelic acid", "malic acid"],
+      "severity": "medium",
+      "message": "Using a retinoid and an AHA/BHA acid in the same routine (especially same session) can over-exfoliate, compromising the skin barrier and increasing redness, peeling, and sun sensitivity. Consider alternating nights or applying at different times of day."
+    },
+    {
+      "id": "vitc-niacinamide",
+      "ingredientCategoriesInvolved": ["antioxidant", "barrier-support"],
+      "triggerIngredients": ["ascorbic acid", "l-ascorbic acid"],
+      "counterpartIngredients": ["niacinamide"],
+      "severity": "low",
+      "message": "High concentrations of L-Ascorbic Acid and Niacinamide used together can, in some formulations, reduce each other's effectiveness or cause flushing in sensitive skin. Modern stabilized formulas usually mitigate this, but those with sensitive skin may prefer separating them by time of day."
+    },
+    {
+      "id": "benzoyl-peroxide-retinol",
+      "ingredientCategoriesInvolved": ["acne-treatment", "retinoid"],
+      "triggerIngredients": ["benzoyl peroxide"],
+      "counterpartIngredients": ["retinol", "tretinoin", "adapalene"],
+      "severity": "medium",
+      "message": "Benzoyl Peroxide can oxidize and deactivate some forms of Retinol if applied at the same time. Many dermatologists recommend using them at different times of day (e.g., Benzoyl Peroxide in the morning, Retinoid at night)."
+    },
+    {
+      "id": "multiple-exfoliating-acids",
+      "ingredientCategoriesInvolved": ["exfoliating-acid", "exfoliating-acid"],
+      "triggerIngredients": ["glycolic acid", "lactic acid", "salicylic acid"],
+      "counterpartIngredients": ["glycolic acid", "lactic acid", "salicylic acid", "mandelic acid"],
+      "severity": "medium",
+      "message": "Layering multiple exfoliating acids in the same routine significantly increases the risk of over-exfoliation, barrier damage, and irritation, particularly for sensitive or already-compromised skin."
+    }
+  ],
+  "comedogenicityScores": {
+    "coconut oil": 4,
+    "cocos nucifera oil": 4,
+    "isopropyl myristate": 5,
+    "isopropyl palmitate": 4,
+    "wheat germ oil": 5,
+    "cocoa butter": 4,
+    "theobroma cacao seed butter": 4,
+    "algae extract": 3,
+    "lauric acid": 4,
+    "myristic acid": 3,
+    "oleic acid": 3,
+    "sodium chloride": 3,
+    "carrageenan": 3,
+    "soybean oil": 3,
+    "glycine soja oil": 3,
+    "shea butter": 2,
+    "butyrospermum parkii butter": 2,
+    "jojoba oil": 1,
+    "simmondsia chinensis seed oil": 1,
+    "argan oil": 1,
+    "argania spinosa kernel oil": 1,
+    "squalane": 1,
+    "niacinamide": 0,
+    "hyaluronic acid": 0,
+    "sodium hyaluronate": 0,
+    "glycerin": 0,
+    "dimethicone": 0,
+    "zinc oxide": 0
+  }
+}
